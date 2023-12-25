@@ -2,7 +2,7 @@ data_ = {}
 series = []
 series_ = [
     {
-        "name": "r1=r2=1",
+        "name": "r1=1_r2=1",
         "showSymbol": false,
         "data": [
             [0.0, 0.0],
@@ -194,11 +194,11 @@ document.getElementById("plotbtn").onclick = function () {
 
     data = []
     if (r1 == r2 && r1 == 0) {
-        name = "r1=r2=0"
+        name = "r1=0_r2=0"
         data = [[0, 0.5], [1, 0.5]]
     }
     else if (r1 == r2 && r1 == 1) {
-        name = "r1=r2=1"
+        name = "r1=1_r2=1"
         data = [[0, 0], [1, 1]]
     }
     else {
@@ -229,9 +229,23 @@ document.getElementById("plotbtn").onclick = function () {
     series.push(data_)
 
     var myChart = echarts.init(document.getElementById('container'));
-    myChart.setOption({
-        series: series
-    }, false)
+    if(name == "r1=r2=0"){
+        myChart.setOption(option = {
+            xAxis: {
+                max: 1.0,
+                min: 0.0
+            },
+            yAxis: {
+                max: 1.0,
+                min: 0.0
+            },
+            series: series
+        }, false)
+    }else{
+        myChart.setOption({
+            series: series
+        }, false)
+    }
 }
 
 // F1 =  ((r1 * f1 * f1) + (f1 * f2) / ((r1 * f1 * f1) + (2 * f1 * f2) + (r2 * f2 * f2)));

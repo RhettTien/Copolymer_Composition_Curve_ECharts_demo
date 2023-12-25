@@ -40,6 +40,8 @@ option = {
         name: 'f1',
         nameLocation: 'end',
         nameGap: 30,
+        max: 1.0,
+        min: 0.0,
         type: 'value',
         boundaryGap: false,
         interval: 0.1,
@@ -52,6 +54,8 @@ option = {
         name: 'F1',
         nameLocation: 'end',
         nameGap: 30,
+        max: 1.0,
+        min: 0.0,
         type: 'value',
         boundaryGap: false,
         interval: 0.1,
@@ -62,7 +66,7 @@ option = {
     },
     series: [
         {
-            "name": "r1=r2=1",
+            "name": "r1=1_r2=1",
             "showSymbol": false,
             "data": [
                 [0.0, 0.0],
